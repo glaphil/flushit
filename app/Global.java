@@ -16,14 +16,14 @@ public class Global extends GlobalSettings {
 
 		Logger.info("loading spots...");
 		if (Ebean.find(Spot.class).findRowCount() == 0) {
-			persistSpot("wc homme lounge");
-			persistSpot("wc femme lounge");
-			persistSpot("wc handi garantie sys");
-			persistSpot("wc femme garantie sys");
-			persistSpot("wc homme rh");
-			persistSpot("wc femme rh");
-			persistSpot("wc homme serv. gen.");
-			persistSpot("wc femme serv. gen.");
+			persistSpot("wc lounge", "male");
+			persistSpot("wc lounge", "female");
+			persistSpot("wc garantie sys", "wheelchair");
+			persistSpot("wc garantie sys", "female");
+			persistSpot("wc rh", "male");
+			persistSpot("wc rh", "female");
+			persistSpot("wc serv. gen.", "wheelchair");
+			persistSpot("wc serv. gen.", "female");
 		}
 
 	}
@@ -32,9 +32,10 @@ public class Global extends GlobalSettings {
 		Logger.info("Application shutdown...");
 	}
 
-	private static void persistSpot(String label) {
+	private static void persistSpot(String label, String gender) {
 		Spot spot = new Spot();
 		spot.label = label;
+		spot.gender = gender;
 		spot.status = SpotStatus.UNKNOWN;
 		spot.lastUpdate = new Date();
 		spot.save();
