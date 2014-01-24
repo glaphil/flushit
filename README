@@ -4,4 +4,15 @@ FLUSHIT!
 productivity tool
 
 
+------
+download  play version 2.2.1
+ajouter le chemin au PATH
+puis dans le rep du projet : play clean run
+
+cf build.sbt pour les dépendances 
+les js sont importés via webjars
+
+nb : version java
+
+
 
