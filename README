@@ -12,7 +12,14 @@ puis dans le rep du projet : play clean run
 cf build.sbt pour les dépendances 
 les js sont importés via webjars
 
-nb : version java
+nb : 
+version java
+atteention la prise en compte auto des evolutions est à true dans l'application.conf
+base h2 persisté sur fichier
+les spots sont insérés dans le Global.java 
 
+REGLE METIER :
+RG 1 : au clique sur un des boutons, le status du spot est mis à jour, ainsi que le timestamp
+RG 2 : à l'affichage si le timestamp de lastupdate est la veille, alors on affiche un status "inconnu"
 
 
