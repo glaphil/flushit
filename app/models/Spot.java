@@ -16,13 +16,16 @@ import play.db.ebean.Model;
 @Entity
 public class Spot extends Model {
 
-	private static final long serialVersionUID = -2418665935460908309L;
+	private static final long serialVersionUID = -2418665935460908310L;
 
 	@Id
     public Long id;
 
     @Required
     public String label;
+
+    @Required
+    public String gender;    
 
     @Required
     public Date lastUpdate;

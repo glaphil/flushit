@@ -6,6 +6,7 @@
 create table spot (
   id                        bigint not null,
   label                     varchar(255),
+  gender                    varchar(255),
   last_update               timestamp,
   status                    varchar(9),
   constraint ck_spot_status check (status in ('AVAILABLE','OCCUPIED','TOXIC','UNKNOWN')),
@@ -26,5 +27,4 @@ drop table if exists spot;
 SET REFERENTIAL_INTEGRITY TRUE;
 
 drop sequence if exists spot_seq;
-
 
