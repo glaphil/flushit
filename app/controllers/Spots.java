@@ -15,6 +15,8 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.index;
 
+import org.joda.time.LocalDateTime;
+
 
 public class Spots extends Controller {
 
@@ -49,13 +51,7 @@ public class Spots extends Controller {
     
     // utils
     private static Date getTodayMidnight(){
-    	Calendar todayMidnight = new GregorianCalendar();
-    	todayMidnight.set(Calendar.HOUR_OF_DAY, 0);
-    	todayMidnight.set(Calendar.MINUTE, 0);
-    	todayMidnight.set(Calendar.SECOND, 0);
-    	todayMidnight.set(Calendar.MILLISECOND, 0);
-    	
-    	return todayMidnight.getTime();
+           return new LocalDateTime().withTime(0, 0, 0, 0).toDate();
     }
 
 }
